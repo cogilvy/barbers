@@ -1,4 +1,5 @@
-export default function AppointmentForm({ user, setUser }) {
+
+export default function AppointmentForm() {
     <div>
     <h1>Hello World!</h1>
     </div>
