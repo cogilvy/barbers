@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
-import AppointmentForm from '../AppointmentForm/AppointmentForm';
-import MyAppointments from '../MyAppointments/MyAppointments';
+import AppointmentForm from '../../components/AppointmentForm/AppointmentForm';
+import BarbersPage from '../BarbersPage/BarbersPage';
+import MyAppointments from '../../components/MyAppointments/MyAppointments';
 import NavBar from '../../components/NavBar/NavBar';
 import './App.css';
 
@@ -17,10 +18,13 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Switch>
             <Route path="/barbers">
-              <AppointmentForm />
+              <BarbersPage />
             </Route>
-            <Route path="/myappointments/new">
+            <Route exact path="/appointments">
               <MyAppointments />
+            </Route>
+            <Route exact path="/appointments/new">
+              <AppointmentForm />
             </Route>
             <Redirect to="/barbers" />
           </Switch>
