@@ -8,4 +8,6 @@ router.get('/', ensureLoggedIn, appointmentsController.index )
 
 router.post('/', ensureLoggedIn, appointmentsController.createAppointment)
 
+router.get('/getBarbers', ensureLoggedIn, appointmentsController.getBarbers)
+
 module.exports = router;
